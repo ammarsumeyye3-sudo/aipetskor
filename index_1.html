@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petskor – AiPetskor Evcil Hayvan Puan Tablosu</title>
+<meta name="description" content="Petskor (AiPetskor): Pati Defteri evcil hayvan puan tablosu. Sıralamayı, özel kartları ve profilleri canlı takip et.">
+<meta property="og:title" content="Petskor – AiPetskor Evcil Hayvan Puan Tablosu">
+<meta property="og:description" content="Sıralamayı, özel kartları ve profilleri canlı takip et.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🐾%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF4F1;--ink:#12263A;--mut:#5B6F7E;--card:#FFFFFF;--line:#D3E0DA;--sun:#FFC53D;--mint:#BFE8D6;--heart:#E5484D;
+--r-altin:#FFC53D;--r-gumus:#C4CED6;--r-nadir:#8E7CF0;--r-normal:#BFE8D6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1A26;--ink:#EAF2EE;--mut:#93A7B4;--card:#16273A;--line:#26405A}}
+:root[data-theme="dark"]{--bg:#0E1A26;--ink:#EAF2EE;--mut:#93A7B4;--card:#16273A;--line:#26405A}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Nunito,system-ui,sans-serif}
+h1,h2,h3,.num{font-family:Fredoka,system-ui,sans-serif;margin:0}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+h1{font-size:2.1rem;font-weight:700;letter-spacing:-.5px}
+h1 span{color:var(--heart)}
+.live{display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--mut)}
+.dot{width:9px;height:9px;border-radius:50%;background:#2FB26B;animation:p 1.8s infinite}
+@keyframes p{50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+.sub{color:var(--mut);margin:4px 0 18px}
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:10px;align-items:end;margin:8px 0 22px}
+.pod{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:14px 8px;text-align:center;cursor:pointer}
+.pod.first{border-color:var(--sun);padding-top:20px;padding-bottom:20px}
+.pod .em{font-size:2.4rem;line-height:1}.pod.first .em{font-size:3.2rem}
+.pod h3{font-size:1rem;margin-top:6px;overflow-wrap:anywhere}
+.pod .num{font-size:1.4rem;font-weight:700}
+.medal{font-size:1.3rem}
+.tools{display:flex;gap:8px;margin-bottom:14px}
+input{flex:1;min-width:0;padding:12px 14px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+input:focus,button:focus-visible{outline:3px solid var(--sun);outline-offset:1px}
+.list{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;background:var(--card);border-radius:18px;padding:12px 14px;border:2px solid var(--line);cursor:pointer;text-align:left;width:100%;color:inherit;font:inherit}
+.rank{font-family:Fredoka;font-weight:700;color:var(--mut);font-size:1.1rem;text-align:center}
+.who{display:flex;gap:10px;align-items:center;min-width:0}
+.av{font-size:1.9rem}
+.who b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.who small{color:var(--mut)}
+.pts{font-family:Fredoka;font-weight:700;font-size:1.25rem}
+.pts.up{animation:fl 1s}
+@keyframes fl{0%{color:#2FB26B;transform:scale(1.25)}100%{transform:none}}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:99px;color:#12263A;margin-left:6px}
+.t-altin{background:var(--r-altin)}.t-gumus{background:var(--r-gumus)}.t-nadir{background:var(--r-nadir);color:#fff}.t-normal{background:var(--r-normal)}
+dialog{border:0;padding:0;background:transparent;max-width:92vw;width:340px}
+dialog::backdrop{background:rgba(10,20,30,.6)}
+.pc{background:var(--card);border-radius:28px;padding:22px;border:5px solid var(--r-normal);text-align:center;color:var(--ink)}
+.pc.altin{border-color:var(--r-altin)}.pc.gumus{border-color:var(--r-gumus)}.pc.nadir{border-color:var(--r-nadir)}
+.pc .big{font-size:4.5rem;line-height:1.1}
+.pc h2{font-size:1.6rem}
+.stats{display:flex;justify-content:center;gap:22px;margin:12px 0}
+.stats div{font-size:.8rem;color:var(--mut)}.stats b{display:block;font:700 1.4rem Fredoka;color:var(--ink)}
+.pc button{margin-top:6px;padding:10px 22px;border:0;border-radius:99px;background:var(--ink);color:var(--bg);font:700 1rem Nunito;cursor:pointer}
+.empty{text-align:center;color:var(--mut);padding:30px 0}
+footer{margin-top:28px;text-align:center;color:var(--mut);font-size:.85rem}
+.adm{background:var(--card);border:2px dashed var(--sun);border-radius:18px;padding:12px;margin-bottom:14px}.f{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}.f select,.f button{padding:12px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit}.f button{background:var(--sun);color:#12263A;font-weight:700;border:0}.ab{display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap}.ab button{margin:0;padding:8px 14px}</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Ai<span>Pet</span>skor</h1>
+  <div class="live"><i class="dot"></i><span id="st">Güncel</span></div>
+</header>
+<p class="sub">Pati Defteri puan tablosu. Puanlar her değişiklikte güncellenir.</p>
+<div class="podium" id="podium"></div>
+<div class="tools"><input id="q" type="search" placeholder="Hayvan veya sahip ara" aria-label="Ara"></div>
+<div class="list" id="list"></div>
+<footer>AiPetskor · Pati Defteri ile birlikte</footer>
+</div>
+<dialog id="dlg"></dialog>
+<script>
+const $=id=>document.getElementById(id);
+const CARD={altin:"Altın",gumus:"Gümüş",nadir:"Nadir",normal:"Klasik"};
+let pets=[],prev={};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const tag=c=>`<span class="tag t-${esc(c||"normal")}">${esc(CARD[c]||CARD.normal)}</span>`;
+
+function render(){
+  const sorted=[...pets].sort((a,b)=>(b.points||0)-(a.points||0));
+  const q=$("q").value.trim().toLowerCase();
+  const top=sorted.slice(0,3);
+  const order=[top[1],top[0],top[2]];
+  const cls=["","first",""],med=["🥈","🥇","🥉"];
+  $("podium").innerHTML=top.length?order.map((p,i)=>p?`<div class="pod ${cls[i]}" data-id="${esc(p.id)}" role="button" tabindex="0"><div class="medal">${med[i]}</div><div class="em">${esc(p.emoji)}</div><h3>${esc(p.name)}</h3><div class="num">${p.points||0}</div></div>`:"").join(""):"";
+  const rows=sorted.map((p,i)=>({p,i})).filter(({p})=>!q||(p.name+" "+p.owner).toLowerCase().includes(q));
+  $("list").innerHTML=rows.length?rows.map(({p,i})=>{
+    const up=prev[p.id]!==undefined&&prev[p.id]!==p.points;
+    return `<button class="row" data-id="${esc(p.id)}"><span class="rank">${i+1}</span><span class="who"><span class="av">${esc(p.emoji)}</span><span style="min-width:0"><b>${esc(p.name)}${tag(p.card)}</b><small>${esc(p.owner)} · ${esc(p.type)}</small></span></span><span class="pts${up?" up":""}">${p.points||0}</span></button>`;
+  }).join(""):`<div class="empty">Sonuç bulunamadı. Başka bir isim dene.</div>`;
+  prev=Object.fromEntries(pets.map(p=>[p.id,p.points]));
+}
+function open(id){
+  const p=pets.find(x=>x.id===id);if(!p)return;
+  const rank=[...pets].sort((a,b)=>(b.points||0)-(a.points||0)).findIndex(x=>x.id===id)+1;
+  const d=$("dlg");
+  d.innerHTML=`<div class="pc ${esc(p.card||"normal")}"><div class="big">${esc(p.emoji)}</div><h2>${esc(p.name)}</h2><div>${esc(p.type)} · Sahibi ${esc(p.owner)} ${tag(p.card)}</div><div class="stats"><div><b>${p.points||0}</b>puan</div><div><b>#${rank}</b>sıra</div></div><p>${esc(p.bio||"")}</p><button id="x">Kapat</button></div>`;
+  d.showModal();$("x").onclick=()=>d.close();
+  d.onclick=e=>{if(e.target===d)d.close()};
+}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-id]");if(t)open(t.dataset.id)});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"){const t=e.target.closest(".pod");if(t)open(t.dataset.id)}});
+$("q").addEventListener("input",render);
+
+
+async function load(){
+  try{const r=await fetch("pets.json?t="+Date.now(),{cache:"no-store"});pets=await r.json();$("st").textContent="Güncel";render()}
+  catch(e){$("st").textContent="Bağlantı yok"}
+}
+load();setInterval(load,30000);
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+ {
+  "id": "1",
+  "name": "Pamuk",
+  "owner": "Elif",
+  "type": "Kedi",
+  "emoji": "🐱",
+  "points": 980,
+  "card": "altin",
+  "bio": "Sabah 6'da mama kasesinin başında nöbet tutar."
+ },
+ {
+  "id": "2",
+  "name": "Max",
+  "owner": "Burak",
+  "type": "Köpek",
+  "emoji": "🐶",
+  "points": 910,
+  "card": "gumus",
+  "bio": "Her yürüyüşte aynı çubuğu eve getirir."
+ },
+ {
+  "id": "3",
+  "name": "Mıstık",
+  "owner": "Zeynep",
+  "type": "Kedi",
+  "emoji": "😸",
+  "points": 870,
+  "card": "nadir",
+  "bio": "Kapı açılırsa ilk o çıkar."
+ },
+ {
+  "id": "4",
+  "name": "Zeytin",
+  "owner": "Can",
+  "type": "Köpek",
+  "emoji": "🐕",
+  "points": 640,
+  "card": "normal",
+  "bio": "Denizi çok sever, banyoyu hiç."
+ },
+ {
+  "id": "5",
+  "name": "Cino",
+  "owner": "Selin",
+  "type": "Papağan",
+  "emoji": "🦜",
+  "points": 520,
+  "card": "nadir",
+  "bio": "Zil sesini taklit eder."
+ },
+ {
+  "id": "6",
+  "name": "Fındık",
+  "owner": "Mert",
+  "type": "Hamster",
+  "emoji": "🐹",
+  "points": 310,
+  "card": "normal",
+  "bio": "Geceleri koşu tekerlekte."
+ }
+]
